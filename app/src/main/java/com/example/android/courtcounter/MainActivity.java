@@ -2,16 +2,20 @@ package com.example.android.courtcounter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
+    public int scoreTeamA = 0;
+    int scoreTeamB = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // mein Code:
+        displayForTeamA(0);
+
     }
 
     /**
@@ -20,5 +24,43 @@ public class MainActivity extends AppCompatActivity
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    public void displayForTeamB(int score){
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+
+    // Display
+    public void addThreeTeamA(View v) {
+        scoreTeamA += 3;
+        displayForTeamA(scoreTeamA);
+    }
+
+    public void addTwoTeamA(View v) {
+        scoreTeamA += 2;
+        displayForTeamA(scoreTeamA);
+    }
+
+    public void addOneTeamA(View v) {
+        scoreTeamA += 1;
+        displayForTeamA(scoreTeamA);
+    }
+
+    public void addThreeTeamB(View v){
+        scoreTeamB += 3;
+        displayForTeamB(scoreTeamB);
+
+    }
+
+    public void addTwoTeamB(View v){
+        scoreTeamB += 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    public  void    addOneTeamB(View v){
+        scoreTeamB += 1;
+        displayForTeamB(scoreTeamB);
     }
 }

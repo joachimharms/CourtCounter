@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="com.example.android.courtcounter.MainActivity"
 
     >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,39 +26,101 @@
         app:layout_constraintTop_toTopOf="parent"
 
         />
-    
+
     <TextView
         android:id="@+id/team_a_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:padding="4dp"
-        android:text="3"
-        android:textAllCaps="true"
-        />
+        android:text="0"
+        android:textAllCaps="true" />
 
     <Button
         android:id="@+id/three_point_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="addThreeTeamA"
         android:text="+3 points"
         android:textAllCaps="true"
+
         />
+
     <Button
         android:id="@+id/two_point_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="addTwoTeamA"
         android:text="+2 points"
-        android:textAllCaps="true"
-        />
+        android:textAllCaps="true" />
+
     <Button
         android:id="@+id/free_throw_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="addOneTeamA"
         android:text="Free throw"
-        android:textAllCaps="true"
-        />
+        android:textAllCaps="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+            android:text="Team B"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/team_b_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+            android:text="0"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/three_point_view_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="addThreeTeamB"
+            android:text="+3 points"
+            android:textAllCaps="true"
+
+            />
+
+        <Button
+            android:id="@+id/two_point_view_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="addTwoTeamB"
+            android:text="+2 points"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/free_throw_view_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="addOneTeamB"
+            android:text="Free throw"
+            android:textAllCaps="true" />
+    </LinearLayout>
 </LinearLayout>
